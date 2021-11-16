@@ -14,7 +14,7 @@
 		background-color: $colour-light-green;
 		padding: 30px;
 		padding-top: 50px;
-		padding-bottom: 50px;
+		padding-bottom: 60px;
 		img{
 			position: absolute;
 			top: -115px;
@@ -62,11 +62,11 @@
 			}
 		}
 		a{
-			display: inline-block;
+			display: block;
 			position: absolute;
 			bottom: -28px;
-			left: 50%;
-			transform: translate(-50%,0);
+			left: 50px;
+			width: calc(100% - 100px);
 			background-color: $colour-yellow;
 			border:5px solid black;
 			box-shadow: 5px 5px 0 0 $colour-dark-green;
@@ -76,7 +76,7 @@
 			text-align: center;
 			text-decoration: none;
 			font-weight: 800;
-			padding: 10px 20px;
+			padding: 15px 25px;
 		}
 	}
 }
