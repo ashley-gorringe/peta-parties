@@ -1,0 +1,9 @@
+{
+    "require": {
+        "twig/twig": "3.0",
+        "steampixel/simple-php-router": "^0.4.1",
+		"catfan/medoo": "^1.6",
+        "vlucas/phpdotenv": "^5.2",
+		"phpmailer/phpmailer": "^6.0"
+    }
+}

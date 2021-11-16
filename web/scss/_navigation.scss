@@ -1,0 +1,84 @@
+.navbar{
+	display: block;
+	position: absolute;
+	top: 0;
+	width: 100%;
+}
+.navbar__structure{
+	display: grid;
+	position: relative;
+	width: 100%;
+	grid-template-columns: auto 1fr;
+	grid-column-gap: 30px;
+	align-items: center;
+	border-left: 5px solid black;
+	border-right: 5px solid black;
+	border-bottom: 5px solid black;
+	padding: 0 30px;
+	background-color: white;
+}
+.navbar__logo{
+	display: block;
+	position: relative;
+	img{
+		display: block;
+		position: relative;
+		height: 100px;
+		padding: 20px 0;
+	}
+}
+.navbar__menu{
+	display: block;
+	position: relative;
+	ul{
+		display: block;
+		position: relative;
+		margin: 0;
+		padding: 0;
+		font-size: 0;
+		line-height: 0;
+		list-style: none;
+		text-align: right;
+		li{
+			display: inline-block;
+			position: relative;
+			font-size: 0;
+			line-height: 0;
+			margin-right: 10px;
+			&:last-child{
+				margin-right: -5px;
+			}
+			a{
+				display: block;
+				position: relative;
+				font-size: 20px;
+				line-height: 20px;
+				color: black;
+				text-decoration: none;
+				padding: 5px;
+				z-index: 1;
+				&::after{
+					content: '';
+					display: block;
+					position: absolute;
+					bottom: 2px;
+					left: 5px;
+					height: 5px;
+					width: calc(100% - 10px);
+					background-color: $colour-yellow;
+					z-index: -1;
+					transform: scale(0,1);
+					transform-origin: left;
+					transition-duration: 0.15s;
+					transition-timing-function: ease-in-out;
+				}
+				&.active::after{
+					transform: scale(1,1);
+				}
+				&:hover::after{
+					transform: scale(1,1);
+				}
+			}
+		}
+	}
+}

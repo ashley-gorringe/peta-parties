@@ -1,0 +1,43 @@
+@font-face {
+    font-family: 'PPObjectSans';
+    src: local('PP Object Sans Heavy'), local('PPObjectSans-Heavy'),
+        url('/fonts/PPObjectSans-Heavy.woff2') format('woff2'),
+        url('/fonts/PPObjectSans-Heavy.woff') format('woff');
+    font-weight: 800;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'PPObjectSans';
+    src: local('PP Object Sans Slanted'), local('PPObjectSans-Slanted'),
+        url('/fonts/PPObjectSans-Slanted.woff2') format('woff2'),
+        url('/fonts/PPObjectSans-Slanted.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'PPObjectSans';
+    src: local('PP Object Sans Regular'), local('PPObjectSans-Regular'),
+        url('/fonts/PPObjectSans-Regular.woff2') format('woff2'),
+        url('/fonts/PPObjectSans-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'PPObjectSans';
+    src: local('PP Object Sans Heavy Slanted'), local('PPObjectSans-HeavySlanted'),
+        url('/fonts/PPObjectSans-HeavySlanted.woff2') format('woff2'),
+        url('/fonts/PPObjectSans-HeavySlanted.woff') format('woff');
+    font-weight: 800;
+    font-style: italic;
+    font-display: swap;
+}
+
+body{
+	font-family: 'PPObjectSans',sans-serif;
+}
