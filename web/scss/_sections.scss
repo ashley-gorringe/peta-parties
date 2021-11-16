@@ -24,6 +24,11 @@ section{
 		transform: translate(-50%,0);
 		opacity: 0.9;
 	}
+
+	h2{
+		color: $colour-dark-green;
+		text-shadow: 5px 5px 0 rgba(0,0,0,0.2);
+	}
 }
 .background--green{
 	background-color: $colour-light-green;
@@ -43,5 +48,10 @@ section{
 		background-image: url(/assets/bg-diag-loop.png);
 		background-size: auto;
 		opacity: 0.2;
+	}
+	color: white;
+	h2{
+		color: $colour-yellow;
+		text-shadow: 5px 5px 0 $colour-dark-green;
 	}
 }
