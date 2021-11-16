@@ -29,6 +29,12 @@ section{
 		color: $colour-dark-green;
 		text-shadow: 5px 5px 0 rgba(0,0,0,0.1);
 	}
+
+	@media (max-width : 1440px){
+		&::after{
+			max-width: 100%;
+		}
+	}
 }
 .background--green{
 	background-color: $colour-light-green;
@@ -65,5 +71,11 @@ section{
 		border: 5px solid black;
 		box-shadow: 5px 5px 0 0 $colour-dark-green;
 		transform: rotate(2deg);
+		@media (max-width : 991px){
+			transform: rotate(1deg);
+		}
+		@media (max-width : 767px){
+			transform: rotate(0deg);
+		}
 	}
 }

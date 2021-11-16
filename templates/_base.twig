@@ -10,24 +10,56 @@
 	</head>
 	<body>
 		<nav class="navbar">
-			<div class="container">
-				<div class="navbar__structure">
-					<div class="navbar__logo">
-						<img src="/assets/logo-colour.svg" />
-					</div>
-					<div class="navbar__menu">
-						<ul>
-							<li><a{% if pageSlug == "homepage" %} class="active"{% endif %} href="#">Home</a></li>
-							<li><a{% if pageSlug == "plans" %} {% endif %} href="#">Our Party Plans</a></li>
-							<li><a{% if pageSlug == "shop" %} {% endif %} href="#">Shop</a></li>
-							<li><a{% if pageSlug == "about" %} {% endif %} href="#">About us</a></li>
-							<li><a{% if pageSlug == "contact" %} {% endif %} href="#">Contact us</a></li>
-						</ul>
-					</div>
+			<div class="navbar__structure">
+				<div class="navbar__logo">
+					<img src="/assets/logo-colour.svg" />
+				</div>
+				<div class="navbar__menu">
+					<ul>
+						<li><a{% if pageSlug == "homepage" %} class="active"{% endif %} href="#">Home</a></li>
+						<li><a{% if pageSlug == "plans" %} {% endif %} href="#">Our Party Plans</a></li>
+						<li><a{% if pageSlug == "shop" %} {% endif %} href="#">Shop</a></li>
+						<li><a{% if pageSlug == "about" %} {% endif %} href="#">About us</a></li>
+						<li><a{% if pageSlug == "contact" %} {% endif %} href="#">Contact us</a></li>
+					</ul>
 				</div>
 			</div>
 		</nav>
     	{% block body %}{% endblock %}
+		<footer>
+			<div class="container">
+				<div class="row">
+					<div class="col-12 col-lg-3 text-center text-lg-start">
+						<img class="footer-logo" src="/assets/logo-colour.svg" />
+						<p class="footer-legal">Copyright &copy; Peta’s Party Planners Ltd 2021. <br />All rights reserved.</p>
+						<p class="footer-legal">Registered company #123456</p>
+					</div>
+					<div class="col-12 col-lg-3 text-center text-lg-start">
+						<span class="footer-heading">Find us</span>
+						<p class="footer-text">123 Pinecastle Rd, <br />Woodbourne, <br />West Raylea, <br />RA34 1KN</p>
+					</div>
+					<div class="col-12 col-lg-3 text-center text-lg-start">
+						<span class="footer-heading">Contact us</span>
+						<p class="footer-text">hello@petaparties.uk <br />01234 567 890</p>
+						<ul class="footer-social">
+							<li><a class="footer-social--facebook" href="#"></a></li>
+							<li><a class="footer-social--twitter" href="#"></a></li>
+							<li><a class="footer-social--instagram" href="#"></a></li>
+						</ul>
+					</div>
+					<div class="col-12 col-lg-3 d-none d-lg-block">
+						<ul class="footer-menu">
+							<li><a href="#">Home</a></li>
+							<li><a href="#">About us</a></li>
+							<li><a href="#">Customer Services</a></li>
+							<li><a href="#">Returns</a></li>
+							<li><a href="#">Terms & Conditions</a></li>
+							<li><a href="#">Privacy Policy</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</footer>
 		<script src="/js/jquery.min.js"></script>
         <script src="/js/scripts.js?v={{cacheVersion}}"></script>
 	</body>

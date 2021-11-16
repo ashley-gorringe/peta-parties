@@ -6,6 +6,7 @@ footer{
 	height: 80px;
 	margin-bottom: 30px;
 	margin-top: -18px;
+	margin-left: -18px;
 }
 .footer-legal{
 	font-size: 0.8rem;
@@ -102,5 +103,17 @@ footer{
 				text-decoration: underline;
 			}
 		}
+	}
+}
+
+
+@media (max-width : 767px){
+	.footer-text{
+		font-size: 1rem;
+		line-height: 1.2rem;
+	}
+	.footer-heading{
+		font-size: 1.4rem;
+		line-height: 1.6rem;
 	}
 }
