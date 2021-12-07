@@ -40,3 +40,30 @@
 		box-shadow: 0px 0px 0 0 $colour-dark-green;
 	}
 }
+
+.form-group{
+	display: block;
+	position: relative;
+	margin-bottom: 20px;
+	&:last-of-type{
+		margin-bottom: 0;
+	}
+	label{
+		display: block;
+		position: relative;
+		font-weight: 800;
+		margin-bottom: 5px;
+	}
+}
+.form-control{
+	display: block;
+	position: relative;
+	width: 100%;
+	margin: 0;
+	padding: 10px;
+	font-size: 16px;
+	line-height: 16px;
+	outline: none;
+	border: 5px solid $colour-dark-green;
+	box-shadow: 5px 5px 0 0 $colour-light-green;
+}

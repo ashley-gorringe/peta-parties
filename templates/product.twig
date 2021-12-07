@@ -1,0 +1,28 @@
+{% extends "_base.twig" %}
+
+{% set pageSlug = "shop" %}
+{% set pageTitle = "Product" %}
+
+{% block body %}
+<div class="breadcrumbs nav-spacer">
+	<div class="container">
+		<ul>
+			<li><a href="/shop">Shop</a></li>
+			<li>Product</li>
+		</ul>
+	</div>
+</div>
+<section class="background--light">
+	<div class="container">
+		<div class="row">
+			<div class="col-12 col-lg-6">
+				<img class="content-image content-image--stylised" src="https://via.placeholder.com/600x400" />
+			</div>
+			<div class="col-12 col-lg-5 offset-lg-1">
+				<h1>Product Name</h1>
+				<p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean bibendum et purus vitae malesuada.</p>
+			</div>
+		</div>
+	</div>
+</section>
+{% endblock %}

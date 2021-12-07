@@ -14,5 +14,9 @@ $colour-red: #E68368;
 @import 'footer';
 @import 'controls';
 
+@import 'plugins/splide';
+
+@import 'components/slider';
 @import 'components/feature-boxes';
 @import 'components/product-grid';
+@import 'components/cards';

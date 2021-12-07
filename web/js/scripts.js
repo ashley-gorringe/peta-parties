@@ -1,3 +1,12 @@
+
+
+new Splide( '.splide', {
+  type   : 'loop',
+  arrows: false,
+  perPage: 1,
+  autoplay: true,
+} ).mount();
+
 $( document ).on('submit','.process-form',function(event){
     console.log( $( this ).serialize() );
     event.preventDefault();

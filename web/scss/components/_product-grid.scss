@@ -31,11 +31,12 @@
 			position: relative;
 			margin-top: 10px;
 			min-width: 0;
+			color: black;
 		}
 		.product-grid__item__name{
 			display: block;
 			position: relative;
-			color: white;
+			color: inherit;
 			font-weight: 800;
 			font-size: 1.4rem;
 			line-height: 1.6rem;
@@ -59,7 +60,7 @@
 		.product-grid__item__price{
 			display: block;
 			position: relative;
-			color: white;
+			color: inherit;
 			font-weight: normal;
 			font-size: 1.2rem;
 			line-height: 1.2rem;
@@ -104,5 +105,11 @@
 	}
 	@media (max-width : 767px){
 		grid-template-columns: repeat(2,1fr);
+	}
+
+	&.product-grid--light{
+		.product-grid__item__content{
+			color: white;
+		}
 	}
 }

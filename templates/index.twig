@@ -4,7 +4,7 @@
 {% set pageTitle = "Homepage" %}
 
 {% block body %}
-<div class="slider" style="height:500px;background:#FFE225;border-bottom:5px solid black;"></div>
+{{ include('components/homepageSlider.twig') }}
 <section class="background--light">
 	<div class="container">
 		<div class="row">
@@ -22,7 +22,7 @@
 					<li>Feature 2</li>
 					<li>Feature 3</li>
 				</ul>
-				<a href="#">Book Now</a>
+				<a href="/book">Book Now</a>
 			</div>
 			<div class="feature-boxes__box">
 				<img src="/assets/tier2.svg" />
@@ -34,7 +34,7 @@
 					<li>Feature 4</li>
 					<li>Feature 5</li>
 				</ul>
-				<a href="#">Book Now</a>
+				<a href="/book">Book Now</a>
 			</div>
 			<div class="feature-boxes__box">
 				<img src="/assets/tier3.svg" />
@@ -48,7 +48,7 @@
 					<li>Feature 6</li>
 					<li>Feature 7</li>
 				</ul>
-				<a href="#">Book Now</a>
+				<a href="/book">Book Now</a>
 			</div>
 		</div>
 	</div>
@@ -61,29 +61,29 @@
 				<p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean bibendum et purus vitae malesuada.</p>
 			</div>
 		</div>
-		<div class="product-grid">
-			<a href="#" class="product-grid__item">
+		<div class="product-grid product-grid--light">
+			<a href="/shop/product" class="product-grid__item">
 				<div class="product-grid__item__image" style="background-image:url(https://via.placeholder.com/500x500)"></div>
 				<div class="product-grid__item__content">
 					<span class="product-grid__item__name">Product Name</span>
 					<span class="product-grid__item__price">£10.00</span>
 				</div>
 			</a>
-			<a href="#" class="product-grid__item">
+			<a href="/shop/product" class="product-grid__item">
 				<div class="product-grid__item__image" style="background-image:url(https://via.placeholder.com/500x500)"></div>
 				<div class="product-grid__item__content">
 					<span class="product-grid__item__name">Product Name</span>
 					<span class="product-grid__item__price">£10.00</span>
 				</div>
 			</a>
-			<a href="#" class="product-grid__item">
+			<a href="/shop/product" class="product-grid__item">
 				<div class="product-grid__item__image" style="background-image:url(https://via.placeholder.com/500x500)"></div>
 				<div class="product-grid__item__content">
 					<span class="product-grid__item__name">Product Name</span>
 					<span class="product-grid__item__price">£10.00</span>
 				</div>
 			</a>
-			<a href="#" class="product-grid__item">
+			<a href="/shop/product" class="product-grid__item">
 				<div class="product-grid__item__image" style="background-image:url(https://via.placeholder.com/500x500)"></div>
 				<div class="product-grid__item__content">
 					<span class="product-grid__item__name">Product Name</span>
@@ -93,7 +93,7 @@
 		</div>
 		<div class="row mt-5">
 			<div class="col-12">
-				<a href="#" class="button">All Products</a>
+				<a href="/shop" class="button">All Products</a>
 			</div>
 		</div>
 	</div>

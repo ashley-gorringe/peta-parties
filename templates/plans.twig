@@ -1,0 +1,55 @@
+{% extends "_base.twig" %}
+
+{% set pageSlug = "plans" %}
+{% set pageTitle = "Party Plans" %}
+
+{% block body %}
+<section class="background--light nav-spacer">
+	<div class="container">
+		<div class="row">
+			<div class="col-12 col-lg-8 text-center text-lg-start">
+				<h2>Our Party Plans</h2>
+				<p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean bibendum et purus vitae malesuada.</p>
+			</div>
+		</div>
+		<div class="feature-boxes">
+			<div class="feature-boxes__box">
+				<img src="/assets/tier1.svg" />
+				<h4>1 Tier</h4>
+				<ul>
+					<li>Feature 1</li>
+					<li>Feature 2</li>
+					<li>Feature 3</li>
+				</ul>
+				<a href="/book/tier1">Book Now</a>
+			</div>
+			<div class="feature-boxes__box">
+				<img src="/assets/tier2.svg" />
+				<h4>2 Tier</h4>
+				<ul>
+					<li>Feature 1</li>
+					<li>Feature 2</li>
+					<li>Feature 3</li>
+					<li>Feature 4</li>
+					<li>Feature 5</li>
+				</ul>
+				<a href="/book/tier2">Book Now</a>
+			</div>
+			<div class="feature-boxes__box">
+				<img src="/assets/tier3.svg" />
+				<h4>3 Tier</h4>
+				<ul>
+					<li>Feature 1</li>
+					<li>Feature 2</li>
+					<li>Feature 3</li>
+					<li>Feature 4</li>
+					<li>Feature 5</li>
+					<li>Feature 6</li>
+					<li>Feature 7</li>
+				</ul>
+				<a href="/book/tier3">Book Now</a>
+			</div>
+		</div>
+	</div>
+</section>
+{% endblock %}

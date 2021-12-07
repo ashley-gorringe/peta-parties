@@ -1,0 +1,50 @@
+.slider{
+	border-bottom:5px solid black;
+}
+.splide__slide{
+	padding-top: 250px;
+	padding-bottom: 150px;
+	background-color: black;
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	z-index: 1;
+	&::after{
+		content: '';
+		display: block;
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		background-color: $colour-yellow;
+		top: 0;
+		left: 0;
+		z-index: -1;
+		opacity: 0.4;
+	}
+}
+.slide__heading{
+	font-size: 2.8rem;
+	line-height: 3rem;
+	font-weight: 800;
+	text-shadow: 5px 5px 0 rgba(0,0,0,0.1);
+}
+.slide__body{
+	font-size: 1.4rem;
+	line-height: 1.8rem;
+}
+.slider .button{
+	margin-top: 30px;
+}
+
+.splide__pagination__page{
+	border-radius: 0;
+	width: 20px;
+	height: 20px;
+	border: 5px solid black;
+	opacity: 1;
+	background-color: transparent;
+	&.is-active{
+		transform: scale(1);
+		background-color: black;
+	}
+}

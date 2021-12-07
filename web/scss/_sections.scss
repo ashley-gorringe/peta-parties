@@ -4,6 +4,10 @@ section{
 	position: relative;
 }
 
+.nav-spacer{
+	margin-top: 100px;
+}
+
 .background--light{
 	background-image: url(/assets/bg-loop.png);
 	background-size: auto;
@@ -70,6 +74,7 @@ section{
 	&.content-image--stylised{
 		border: 5px solid black;
 		box-shadow: 5px 5px 0 0 $colour-dark-green;
+		/*
 		transform: rotate(2deg);
 		@media (max-width : 991px){
 			transform: rotate(1deg);
@@ -77,5 +82,6 @@ section{
 		@media (max-width : 767px){
 			transform: rotate(0deg);
 		}
+		*/
 	}
 }
