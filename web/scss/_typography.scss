@@ -67,3 +67,15 @@ p.lead{
 		line-height: 1.6rem;
 	}
 }
+
+
+.product-price{
+	background-color: $colour-yellow;
+	font-size: 24px;
+	line-height: 24px;
+	font-weight: 700;
+	padding: 10px;
+	display: inline-block;
+	box-shadow: 5px 5px 0 0 black;
+	margin-bottom: 50px;
+}

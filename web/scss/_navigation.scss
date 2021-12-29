@@ -57,6 +57,7 @@
 				position: relative;
 				font-size: 20px;
 				line-height: 20px;
+				font-weight: 700;
 				color: black;
 				text-decoration: none;
 				padding: 5px;
@@ -121,8 +122,7 @@
 					text-decoration: underline;
 				}
 
-				&.navbar__account__cart{
-					margin-left: 10px;
+				&.navbar__account__basket{
 					background-color: black;
 					color: $colour-yellow;
 				}

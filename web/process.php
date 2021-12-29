@@ -23,24 +23,17 @@ if(empty($_POST['action'])){
 		case 'logout':
 			include dirname($_SERVER['DOCUMENT_ROOT']).'/processes/logout.php';
 			break;
-
-		case 'application-start':
-			include dirname($_SERVER['DOCUMENT_ROOT']).'/processes/application/start.php';
+		case 'delete-account':
+			include dirname($_SERVER['DOCUMENT_ROOT']).'/processes/delete-account.php';
 			break;
-		case 'application-cancel':
-			include dirname($_SERVER['DOCUMENT_ROOT']).'/processes/application/cancel.php';
+		case 'addToBasket':
+			include dirname($_SERVER['DOCUMENT_ROOT']).'/processes/addToBasket.php';
 			break;
-		case 'basicInfo':
-			include dirname($_SERVER['DOCUMENT_ROOT']).'/processes/application/basicInfo.php';
+		case 'quantityUp':
+			include dirname($_SERVER['DOCUMENT_ROOT']).'/processes/quantityUp.php';
 			break;
-		case 'contactDetails':
-			include dirname($_SERVER['DOCUMENT_ROOT']).'/processes/application/contactDetails.php';
-			break;
-		case 'artistBio':
-			include dirname($_SERVER['DOCUMENT_ROOT']).'/processes/application/artistBio.php';
-			break;
-		case 'availability':
-			include dirname($_SERVER['DOCUMENT_ROOT']).'/processes/application/availability.php';
+		case 'quantityDown':
+			include dirname($_SERVER['DOCUMENT_ROOT']).'/processes/quantityDown.php';
 			break;
 	}
 }

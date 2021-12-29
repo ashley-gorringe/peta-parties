@@ -1,0 +1,126 @@
+.modal__overlay{
+	display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100vh;
+	background: black;
+	z-index: 1000;
+	opacity: 0.5;
+}
+.modal__container{
+	display: none;
+	position: fixed;
+	width: 100%;
+	top: 50px;
+	left: 0;
+	z-index: 1001;
+	pointer-events: none;
+}
+.modal{
+	display: block;
+	position: relative;
+	width: 100%;
+	max-width: 600px;
+	background: white;
+	margin-left: auto;
+	margin-right: auto;
+	border: 5px solid black;
+	box-shadow: 5px 5px 0 0 transparentize(black, 0.8);
+	pointer-events: auto;
+}
+.modal__header{
+	display: grid;
+	position: relative;
+	grid-template-columns: 1fr auto;
+	grid-column-gap: 30px;
+	align-items: center;
+	padding: 30px;
+	span{
+		display: block;
+		position: relative;
+		font-size: 30px;
+		line-height: 1.2rem;
+		font-weight: 700;
+		margin: 0;
+		padding: 0;
+	}
+	button{
+		display: block;
+		position: relative;
+		width: 40px;
+		height: 40px;
+		border: 5px solid black;
+		background-color: $colour-yellow;
+		box-shadow: 5px 5px 0 0 transparentize(black, 0.8);
+		i{
+			display: block;
+			position: absolute;
+			font-size: 20px;
+			line-height: 20px;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%,-50%);
+		}
+	}
+}
+.modal__body{
+	padding: 30px;
+	padding-top: 0;
+}
+
+.modal__menu{
+	display: block;
+	position: relative;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	font-size: 0;
+	line-height: 0;
+	li{
+		display: block;
+		position: relative;
+		margin: 0;
+		padding: 0;
+		font-size: 0;
+		line-height: 0;
+		a{
+			display: block;
+			position: relative;
+			margin: 0;
+			padding: 12px;
+			padding-right: 52px;
+			font-size: 18px;
+			line-height: 18px;
+			font-weight: 700;
+			border-bottom: 5px solid transparentize(black, 0.9);
+			text-decoration: none;
+			color: black;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			white-space: nowrap;
+			&::after{
+				content: '';
+				display: block;
+				position: absolute;
+				width: 30px;
+				height: 22px;
+				background-image: url(/assets/arrow-dark.svg);
+				background-size: contain;
+				background-position: center;
+				background-repeat: no-repeat;
+				top: calc(50% - 11px);
+				right: 12px;
+				pointer-events: none;
+				opacity: 0;
+			}
+			&:hover::after{
+				opacity: 1;
+			}
+		}
+		&:last-child a{
+			border-bottom: none;
+		}
+	}
+}

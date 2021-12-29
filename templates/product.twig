@@ -4,23 +4,18 @@
 {% set pageTitle = "Product" %}
 
 {% block body %}
-<div class="breadcrumbs nav-spacer">
-	<div class="container">
-		<ul>
-			<li><a href="/shop">Shop</a></li>
-			<li>Product</li>
-		</ul>
-	</div>
-</div>
-<section class="background--light">
+<section class="background--light nav-spacer">
 	<div class="container">
 		<div class="row">
 			<div class="col-12 col-lg-6">
-				<img class="content-image content-image--stylised" src="https://via.placeholder.com/600x400" />
+				<img class="content-image content-image--stylised" src="/images/products/{{product.image}}" />
 			</div>
 			<div class="col-12 col-lg-5 offset-lg-1">
-				<h1>Product Name</h1>
+				<h1>{{product.title}}</h1>
+				<span class="product-price">£{{product.price|number_format(2,'.')}}</span>
 				<p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean bibendum et purus vitae malesuada.</p>
+
+				<button class="button" onclick="addToBasket('{{product.productid}}')">Add to Basket</button>
 			</div>
 		</div>
 	</div>

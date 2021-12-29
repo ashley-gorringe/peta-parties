@@ -4,7 +4,7 @@
 {% set pageTitle = "Homepage" %}
 
 {% block body %}
-{{ include('components/homepageSlider.twig') }}
+{{ include('components/homepage-slider.twig') }}
 <section class="background--light">
 	<div class="container">
 		<div class="row">
@@ -62,34 +62,15 @@
 			</div>
 		</div>
 		<div class="product-grid product-grid--light">
-			<a href="/shop/product" class="product-grid__item">
-				<div class="product-grid__item__image" style="background-image:url(https://via.placeholder.com/500x500)"></div>
+			{% for product in products %}
+			<a href="/shop/{{product.productid}}" class="product-grid__item">
+				<div class="product-grid__item__image" style="background-image:url(/images/products/{{product.image}})"></div>
 				<div class="product-grid__item__content">
-					<span class="product-grid__item__name">Product Name</span>
-					<span class="product-grid__item__price">£10.00</span>
+					<span class="product-grid__item__name">{{product.title}}</span>
+					<span class="product-grid__item__price">£{{product.price|number_format(2,'.')}}</span>
 				</div>
 			</a>
-			<a href="/shop/product" class="product-grid__item">
-				<div class="product-grid__item__image" style="background-image:url(https://via.placeholder.com/500x500)"></div>
-				<div class="product-grid__item__content">
-					<span class="product-grid__item__name">Product Name</span>
-					<span class="product-grid__item__price">£10.00</span>
-				</div>
-			</a>
-			<a href="/shop/product" class="product-grid__item">
-				<div class="product-grid__item__image" style="background-image:url(https://via.placeholder.com/500x500)"></div>
-				<div class="product-grid__item__content">
-					<span class="product-grid__item__name">Product Name</span>
-					<span class="product-grid__item__price">£10.00</span>
-				</div>
-			</a>
-			<a href="/shop/product" class="product-grid__item">
-				<div class="product-grid__item__image" style="background-image:url(https://via.placeholder.com/500x500)"></div>
-				<div class="product-grid__item__content">
-					<span class="product-grid__item__name">Product Name</span>
-					<span class="product-grid__item__price">£10.00</span>
-				</div>
-			</a>
+			{% endfor %}
 		</div>
 		<div class="row mt-5">
 			<div class="col-12">

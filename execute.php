@@ -4,13 +4,13 @@ session_start();
 date_default_timezone_set('Europe/London');
 
 require BASE_PATH.'vendor/autoload.php';
-/*
+
 $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
 $dotenv->load();
-*/
+
 $loader = new \Twig\Loader\FilesystemLoader(BASE_PATH.'templates');
 $twig = new \Twig\Environment($loader);
-/*
+
 use Medoo\Medoo;
 $database = new Medoo([
     'database_type' => $_ENV['DB_TYPE'],
@@ -33,6 +33,10 @@ $mail->Password   = $_ENV['MAIL_PASSWORD'];
 $mail->SMTPSecure = $_ENV['MAIL_SMTPSECURE'];
 $mail->Port       = $_ENV['MAIL_PORT'];
 
+use Slim\Http\Request;
+use Slim\Http\Response;
+use Stripe\Stripe;
+
 date_default_timezone_set('Europe/London');
 require_once BASE_PATH.'functions.php';
 
@@ -54,5 +58,4 @@ if(isset($_COOKIE['token'])){
 }else{
 	$_SESSION['userid'] = null;
 }
-*/
 ?>

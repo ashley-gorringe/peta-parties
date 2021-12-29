@@ -71,6 +71,17 @@ footer{
 			&.footer-social--instagram{
 				background-color: #E1306C;
 			}
+
+			i{
+				display: block;
+				position: absolute;
+				font-size: 26px;
+				line-height: 26px;
+				color: white;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%,-50%);
+			}
 		}
 	}
 }
