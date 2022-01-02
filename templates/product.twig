@@ -1,21 +1,21 @@
 {% extends "_base.twig" %}
 
 {% set pageSlug = "shop" %}
-{% set pageTitle = "Product" %}
+{% set pageTitle = product.title %}
 
 {% block body %}
 <section class="background--light nav-spacer">
 	<div class="container">
 		<div class="row">
 			<div class="col-12 col-lg-6">
-				<img class="content-image content-image--stylised" src="/images/products/{{product.image}}" />
+				<div class="product-image" style="background-image:url('/images/products/{{product.image}}')"></div>
 			</div>
 			<div class="col-12 col-lg-5 offset-lg-1">
 				<h1>{{product.title}}</h1>
 				<span class="product-price">£{{product.price|number_format(2,'.')}}</span>
-				<p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean bibendum et purus vitae malesuada.</p>
+				<p>{{product.description|nl2br}}</p>
 
-				<button class="button" onclick="addToBasket('{{product.productid}}')">Add to Basket</button>
+				<button class="button mt-4" onclick="addToBasket('{{product.productid}}')">Add to Basket</button>
 			</div>
 		</div>
 	</div>

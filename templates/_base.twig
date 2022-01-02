@@ -45,7 +45,7 @@
 				<div class="row">
 					<div class="col-12 col-lg-3 text-center text-lg-start">
 						<img class="footer-logo" src="/assets/logo-colour.svg" />
-						<p class="footer-legal">Copyright &copy; Peta’s Party Planners Ltd 2021. <br />All rights reserved.</p>
+						<p class="footer-legal">Copyright &copy; Peta’s Parties Ltd {{ 'now' | date('Y') }}. <br />All rights reserved.</p>
 						<p class="footer-legal">Registered company #123456</p>
 					</div>
 					<div class="col-12 col-lg-3 text-center text-lg-start">
@@ -78,5 +78,15 @@
 		<script src="/js/splide.min.js"></script>
 		<script src="/js/sweetalert.min.js"></script>
         <script src="/js/scripts.js?v={{cacheVersion}}"></script>
+		{% if sliderScript == true %}
+		<script>
+		new Splide( '.splide', {
+		  type   : 'loop',
+		  arrows: false,
+		  perPage: 1,
+		  autoplay: true,
+		} ).mount();
+		</script>
+		{% endif %}
 	</body>
 </html>

@@ -85,3 +85,13 @@ section{
 		*/
 	}
 }
+
+.product-image{
+	display: block;
+	width: 100%;
+	padding-top: 70%;
+	background-size:cover;
+	background-position: center;
+	border: 5px solid black;
+	box-shadow: 5px 5px 0 0 $colour-dark-green;
+}

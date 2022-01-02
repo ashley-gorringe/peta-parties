@@ -1,11 +1,11 @@
 <?php
 require_once dirname($_SERVER['DOCUMENT_ROOT']).'/execute.php';
 
-\Stripe\Stripe::setApiKey('sk_test_51KC6j1JkjlpMJLv5a6hICG37qxSemDcp4o2RX4EKDaFDuEnyuBltuS597eCStC3nKh3Bk5BLqvZC9stGSKMMfwtb00EiFjONwB');
+\Stripe\Stripe::setApiKey($_ENV['STRIPE_SECRET']);
 
 header('Content-Type: application/json');
 
-$YOUR_DOMAIN = 'http://localhost:8888';
+$YOUR_DOMAIN = $_ENV['SYSTEM_URL'];
 
 $basketItems = $database->select('basket',[
 	'[>]products'=>['productid'=>'productid']

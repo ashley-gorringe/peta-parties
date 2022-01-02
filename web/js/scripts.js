@@ -200,7 +200,11 @@ function quantityUp(productid){
 					icon: "error",
 				});
 			}else if(response.status == 'success'){
-				location.reload();
+				//location.reload();
+				$('#line-item-quantity-'+productid).html(response.itemTotal);
+				$('#basket-checkout').html('Checkout (£'+response.checkoutPrice+')');
+				$('#basket-modal-title').html('Your Basket ('+response.basketTotal+')');
+				$('#openBasketModal').html('Basket ('+response.basketTotal+')');
 			}
 		}
 	});
@@ -221,16 +225,19 @@ function quantityDown(productid){
 					icon: "error",
 				});
 			}else if(response.status == 'success'){
-				location.reload();
+				//location.reload();
+				if(response.type == 'remove'){
+					$('.basket-list__item#'+productid).remove();
+					$('#basket-checkout').html('Checkout (£'+response.checkoutPrice+')');
+					$('#basket-modal-title').html('Your Basket ('+response.basketTotal+')');
+					$('#openBasketModal').html('Basket ('+response.basketTotal+')');
+				}else if(response.type == 'subtract'){
+					$('#line-item-quantity-'+productid).html(response.itemTotal);
+					$('#basket-checkout').html('Checkout (£'+response.checkoutPrice+')');
+					$('#basket-modal-title').html('Your Basket ('+response.basketTotal+')');
+					$('#openBasketModal').html('Basket ('+response.basketTotal+')');
+				}
 			}
 		}
 	});
 }
-
-
-new Splide( '.splide', {
-  type   : 'loop',
-  arrows: false,
-  perPage: 1,
-  autoplay: true,
-} ).mount();

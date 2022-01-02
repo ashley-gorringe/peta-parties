@@ -42,6 +42,29 @@ if($existingCount < 1){
 	]);
 
 	$response->status = 'success';
+
+	$basketItems = $database->select('basket',[
+		'[>]products'=>['productid'=>'productid']
+	],'*',[
+		'userid'=>$_SESSION['userid']
+	]);
+	$checkoutPrice = 0;
+	foreach ($basketItems as $key => $item) {
+		$price = $item['price'] / 100;
+		$basketItems[$key]['price'] = $price;
+		$checkoutPrice += $price * $item['quantity'];
+	}
+	$response->basketTotal = $database->sum('basket','quantity',[
+		'userid'=>$_SESSION['userid']
+	]);
+	$response->itemTotal = $database->get('basket','quantity',[
+		'AND'=>[
+			'userid'=>$_SESSION['userid'],
+			'productid'=>$productid
+		]
+	]);
+	$response->checkoutPrice = number_format($checkoutPrice, 2, '.', ',');
+
 	echo json_encode($response);
 	exit;
 }

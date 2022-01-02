@@ -91,7 +91,7 @@
 <div class="modal__container" id="basket-modal">
 	<div class="modal">
 		<div class="modal__header">
-			<span>Your Basket ({{basket.total}})</span>
+			<span id="basket-modal-title">Your Basket ({{basket.total}})</span>
 			<button class="modalCloseButton"><i class="fas fa-times"></i></button>
 		</div>
 		<div class="modal__body">
@@ -99,14 +99,14 @@
 
 				{% for item in basket.items %}
 
-				<div class="basket-list__item">
+				<div id="{{item.productid}}" class="basket-list__item">
 					<div class="basket-list__image" style="background-image:url(/images/products/{{item.image}})"></div>
 					<div class="basket-list__details">
 						<span class="basket-list__name">{{item.title}}</span>
 						<span class="basket-list__price">£{{item.price|number_format(2,'.')}}</span>
 						<div class="basket-list__controls">
 							<a href="#" onclick="quantityDown('{{item.productid}}')"><i class="fas fa-minus"></i></a>
-							<div>{{item.quantity}}</div>
+							<div id="line-item-quantity-{{item.productid}}">{{item.quantity}}</div>
 							<a href="#" onclick="quantityUp('{{item.productid}}')"><i class="fas fa-plus"></i></a>
 						</div>
 					</div>
@@ -115,7 +115,7 @@
 				{% endfor %}
 			</div>
 			<form action="/checkout.php" method="POST">
-				<button type="submit" class="button mt-3">Checkout (£{{basket.totalPrice|number_format(2,'.')}})</button>
+				<button id="basket-checkout" type="submit" class="button mt-3">Checkout (£{{basket.totalPrice|number_format(2,'.')}})</button>
 			</form>
 		</div>
 	</div>

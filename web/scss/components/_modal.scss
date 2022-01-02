@@ -29,6 +29,8 @@
 	border: 5px solid black;
 	box-shadow: 5px 5px 0 0 transparentize(black, 0.8);
 	pointer-events: auto;
+	max-height: calc(100vh - 100px);
+    overflow-y: scroll;
 }
 .modal__header{
 	display: grid;
