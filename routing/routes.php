@@ -27,22 +27,22 @@ Route::add('/shop/([0-9a-zA-Z]*)', function($id) {
 });
 
 Route::add('/about', function() {
-	echo $GLOBALS['twig']->render('about.twig');
+	echo $GLOBALS['twig']->render('about.twig', ['user'=>$GLOBALS[user],'basket'=>$GLOBALS[basket]);
 });
 Route::add('/contact', function() {
-	echo $GLOBALS['twig']->render('coming-soon.twig');
+	echo $GLOBALS['twig']->render('coming-soon.twig', ['user'=>$GLOBALS[user],'basket'=>$GLOBALS[basket]);
 });
 Route::add('/customer-services', function() {
-	echo $GLOBALS['twig']->render('coming-soon.twig');
+	echo $GLOBALS['twig']->render('coming-soon.twig', ['user'=>$GLOBALS[user],'basket'=>$GLOBALS[basket]);
 });
 Route::add('/returns', function() {
-	echo $GLOBALS['twig']->render('coming-soon.twig');
+	echo $GLOBALS['twig']->render('coming-soon.twig', ['user'=>$GLOBALS[user],'basket'=>$GLOBALS[basket]);
 });
 Route::add('/terms', function() {
-	echo $GLOBALS['twig']->render('coming-soon.twig');
+	echo $GLOBALS['twig']->render('coming-soon.twig', ['user'=>$GLOBALS[user],'basket'=>$GLOBALS[basket]);
 });
 Route::add('/privacy', function() {
-	echo $GLOBALS['twig']->render('coming-soon.twig');
+	echo $GLOBALS['twig']->render('coming-soon.twig', ['user'=>$GLOBALS[user],'basket'=>$GLOBALS[basket]);
 });
 
 Route::run('/');
