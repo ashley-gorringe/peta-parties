@@ -27,7 +27,7 @@ Route::add('/shop/([0-9a-zA-Z]*)', function($id) {
 });
 
 Route::add('/about', function() {
-	echo $GLOBALS['twig']->render('coming-soon.twig');
+	echo $GLOBALS['twig']->render('about.twig');
 });
 Route::add('/contact', function() {
 	echo $GLOBALS['twig']->render('coming-soon.twig');
