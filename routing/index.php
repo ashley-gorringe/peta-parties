@@ -1,5 +1,4 @@
 <?php
-
 $products = $GLOBALS['database']->select('products','*',[
 	'LIMIT'=>4
 ]);

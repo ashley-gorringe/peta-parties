@@ -1,4 +1,6 @@
 <?php
+//Universal process/response file. This file sets up a JSON response to give data back to all AJAX interactions that the visitor/user can make from the site frontend.
+
 require_once dirname($_SERVER['DOCUMENT_ROOT']).'/execute.php';
 header('Content-Type: application/json');
 header("Expires: 0");

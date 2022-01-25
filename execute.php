@@ -1,4 +1,5 @@
 <?php
+//Sets up the full PHP environment, loads in dependancies, functions, and checks to see if a user is signed in.
 define('BASE_PATH',dirname($_SERVER['DOCUMENT_ROOT']).'/');
 session_start();
 date_default_timezone_set('Europe/London');

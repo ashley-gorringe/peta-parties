@@ -1,4 +1,5 @@
 <?php
+//Sets up Stripe Checkout integration.
 require_once dirname($_SERVER['DOCUMENT_ROOT']).'/execute.php';
 
 \Stripe\Stripe::setApiKey($_ENV['STRIPE_SECRET']);

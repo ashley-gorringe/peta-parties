@@ -1,6 +1,7 @@
 <?php
-$userid = randomString(30);
+$userid = randomString(30);//Generates a 30 character random alphanumeric string.
 
+//Checks that required form field data has been send to the back-end. If not, end the current process and send back an error message including the missing form fields.
 if(empty($_POST['firstname']) || empty($_POST['lastname']) || empty($_POST['email']) || empty($_POST['password']) || empty($_POST['repassword'])){
 	$errorFields = array();
 	if(empty($_POST['firstname'])){
@@ -26,6 +27,7 @@ if(empty($_POST['firstname']) || empty($_POST['lastname']) || empty($_POST['emai
 	exit;
 }
 
+//Checks that the email field is using a valid email address. If not, end the current process and send back an error message.
 if(!validateEmail($_POST['email'])){
 	$errorFields = array('email');
 	$response->status = 'error';
@@ -35,6 +37,7 @@ if(!validateEmail($_POST['email'])){
 	exit;
 }
 
+//Checks that the Password and Password Re-enter fields match each other. If not, end the current process and send back an error message.
 if($_POST['password'] != $_POST['repassword']){
 	$response->status = 'error';
 	$response->message = 'Password Missmatch.';
@@ -42,6 +45,8 @@ if($_POST['password'] != $_POST['repassword']){
 	echo json_encode($response);
 	exit;
 }
+
+//Counts occurences of the email address in the users table of the database. If the email already exists in the database, end the current process and send back an error message.
 $emailCount = $database->count('users',[
 	'email'=>$_POST['email']
 ]);
@@ -53,10 +58,12 @@ if($emailCount > 0){
 	exit;
 }
 
+//Submitted data has been validated for this process, actions can now be taken.
+
+//Hash the submitted password.
 $passwordHash = password_hash($_POST['password'], PASSWORD_DEFAULT);
-//$gravatar = md5(strtolower(trim($_POST['email'])));
 
-
+//Create a new record in the users table including all the submitted data, the hashed password, and the randomised string as a unique key.
 $database->insert('users',[
 	'userid'=>$userid,
 	'email'=>$_POST['email'],
@@ -65,54 +72,18 @@ $database->insert('users',[
 	'lastname'=>$_POST['lastname'],
 ]);
 
-/*
-$token = randomString(60);
-$database->insert('verifyToken',[
-	'userid'=>$userid,
-	'token'=>$token
-]);
-*/
-
+//Create a cookie token in the database associated with the userid.
 $loginToken = randomString(60);
 $database->insert('loginToken',[
 	'userid'=>$userid,
 	'token'=>$loginToken
 ]);
 
+//Set the Session userid and set a token cookie. The user is now logged in and a cookie is set to remember their login state.
 $_SESSION['userid'] = $userid;
 setcookie('token', $loginToken, time() + (86400 * 365), "/");
 
-//$verifyUrl = $_ENV['SYSTEM_URL'].'verify/'.$token;
-
-/*
-try {
-	//Recipients
-	$mail->setFrom('no-reply@mail.serverbook.app', 'ServerBook');
-	$mail->addAddress($_POST['email'], $_POST['name']);     // Add a recipient
-
-	// Content
-	$mail->isHTML(true);                                  // Set email format to HTML
-	$mail->Subject = 'Your New ServerBook Account';
-	$mail->Body    = '
-	<h1>Welcome to ServerBook!</h1>
-	<p>Please verify your email address by clicking on the following link, or copying it into your browser:</p>
-	<p><a href="'.$verifyUrl.'">'.$verifyUrl.'</a></p>
-	';
-	$mail->AltBody = 'Welcome to ServerBook! Please verify your email address by copying the following link into your browser: '.$verifyUrl.'.';
-
-	$mail->send();
-	$response->status = 'success';
-	$response->successRedirect = '/';
-	echo json_encode($response);
-	exit;
-} catch (Exception $e) {
-	$response->status = 'error';
-	$response->message = 'Mailer Error: '.$mail->ErrorInfo;
-	echo json_encode($response);
-	exit;
-}
-*/
-
+//Process has been successful, send success data back to AJAX to take actions and report success to user.
 $response->status = 'success';
 $response->successCallback = 'loginSuccess';
 echo json_encode($response);

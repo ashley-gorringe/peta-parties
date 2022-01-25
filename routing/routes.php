@@ -1,7 +1,6 @@
 <?php
-
-//echo randomStringCaps(10);
-
+//Uses Steampixel\Route to route traffic to the required processes and/or templates.
+//Each possible URL route (listed below) fetches and processes the required data and then passes all data into Twig which then generates the frontend templates.
 use Steampixel\Route;
 Route::add('/', function() {
 	require_once dirname($_SERVER['DOCUMENT_ROOT']).'/routing/index.php';
@@ -10,7 +9,6 @@ Route::add('/', function() {
 Route::add('/plans', function() {
 	echo $GLOBALS['twig']->render('plans.twig', ['user'=>$GLOBALS[user],'basket'=>$GLOBALS[basket]]);
 });
-
 
 Route::add('/book', function() {
 	echo $GLOBALS['twig']->render('coming-soon.twig');
