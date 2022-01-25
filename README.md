@@ -1,0 +1,3 @@
+# HND Web Design and Programming Project
+### Scenario
+Peta’s Party Plan is a company that provides everything needed to hold a children’s party. The company has a number of town centre shops where the general public can buy party items. However, the main business of Peta’s Party Plan is the organisation of themed children’s parties. This operation is run from the company’s Head Office. The company also has a central warehouse, which holds stocks of all the items sold in the shops and required to run a party. The Head Office and warehouse are on different sites. The company uses ICT to help manage its information.
