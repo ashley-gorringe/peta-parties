@@ -26,7 +26,7 @@ if(empty($_POST['action'])){
 			include dirname($_SERVER['DOCUMENT_ROOT']).'/processes/logout.php';
 			break;
 		case 'delete-account':
-			include dirname($_SERVER['DOCUMENT_ROOT']).'/processes/delete-account.php';
+			include dirname($_SERVER['DOCUMENT_ROOT']).'/processes/deleteAccount.php';
 			break;
 		case 'addToBasket':
 			include dirname($_SERVER['DOCUMENT_ROOT']).'/processes/addToBasket.php';
